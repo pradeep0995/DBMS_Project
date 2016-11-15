@@ -1,0 +1,30 @@
+ {% load static %}
+ <!DOCTYPE html>
+<!-- This file contains the basic outlook of the project  edit it further-->
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'satvik/css/style.css' %}">
+</head>
+<body>
+<h1><u>Following are the list of previous feedbacks</u></h1>
+
+ <table style="width:50%">
+  <tr>
+    <th align="left">Rating</th>
+    <th align="left">Suggestion</th>
+  </tr>
+  {%for i in feeds%}
+  <tr>
+  {%for j in i%}
+    <td>{{j}}</td>
+    {% endfor%}
+  </tr>
+  {% endfor %}
+</table> 
+
+<br>
+<a href="{% url 'facility' %}"><button class="button1">Back</button></a>
+<br>
+
+</body>
+</html> 

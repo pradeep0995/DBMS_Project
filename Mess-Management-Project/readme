@@ -1,0 +1,47 @@
+ ------------------------
+| ASSIGNMENT 1            |
+| SATVIK MESS MANAGEMENT  |
+| IIT-BHU VARANSI         |
+| AUTHOR : PRADEEP YADAV  |
+| ROLL NO :14075037       |
+| BTECH PART (III)        |
+ -------------------------
+
+
+The following project aims to develop a web application to make the management of Satvik Mess here at IIT-BHU.
+Django version 1.11 and python3 was used in the development of the project 
+
+### INSTRUCTIONS
+1> To start server ,from the folder contaning manage.py file run the following command
+ $python3 manage.py runserver
+The server will run on localhost and port :8000
+
+### FUNCTIONALITIES
+
+1> clicking on menu will direct to a menu page showing the menu of the mess.
+2> For the registered users login button is available to login and avail the following facilities:
+	2.a)Register Complaint
+	2.b)View Previous Complaint
+	3.c)Give FeedBack
+	4.d)View All previos Feedback
+	5.e)logout
+3> For the intrested students who wish to eat at satvik enrollment button is made available
+	3.a)Enrollment is followed is a signup for the user to avail the facilities
+
+4>Only for Admin
+	Admin can login via 'Admin Login'
+	Various facilities He/She enjoys are:
+		1) View Staff: Can See the details of mess staff
+		2) View Staff: Can see the details of the students enrolled in present year
+		3) View Inventory :Can see the details of the inventory/purchases
+		4) Add Staff : Can add a staff member
+		5) Remove Staff :Can remove a staff member
+		6) Add Purchase : Can add New purchases into the system
+		7) Add Notice :If some new notice is to be shown 
+		8)logout
+
+5) Home page shows Notification block to show the notification if any.
+6) At last contact details of the manager are mentioned .
+
+
+

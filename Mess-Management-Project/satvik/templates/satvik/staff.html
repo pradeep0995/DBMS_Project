@@ -1,0 +1,30 @@
+ {% load static %}
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'satvik/css/style.css' %}">
+</head>
+<body>
+<h1><u>Details of the Mess Staff:</u> </h1>
+
+<table style="width:100%">
+  <tr>
+    <th align="left">MEMBERID</th>
+    <th align="left">NAME</th>
+    <th align="left">PERMANENT ADDRESS</th>
+    <th align="left">CONTACT</th>
+    <th align="left">DATE OF JOIN</th>
+    <th align="left">EMPLOYMENT TYPE</th>
+  </tr>
+  {% for i in staf %}
+  <tr>
+  {% for j in i%}
+    <td>{{j}}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+  
+</table> 
+
+</body>
+</html> 

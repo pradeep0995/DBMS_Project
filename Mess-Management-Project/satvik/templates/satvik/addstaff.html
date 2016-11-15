@@ -1,0 +1,43 @@
+ {% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'satvik/css/style.css' %}">
+</head>
+<body>
+<h1> <u>Enter the details of new mess member:</u></h1>
+<form action="{% url 'astaff' %}" method="post">
+{% csrf_token %}
+{% if error %}
+  {{ error }}<br><br>
+{% endif %}
+
+  NAME:<br>
+  <input type="text" name="name" placeholder="name...">
+  <br>
+
+  ADDRESS:<br>
+  <input type="text" name="add" placeholder="address...">
+  <br>
+
+  PHONE:<br>
+  <input type="text" name="phone" placeholder="mobile...">
+  <br>
+ 
+  DATE:<br>
+  <input type="date" name="date" placeholder="date...">
+  <br>
+
+  TYPE:<br>
+  <input type="text" name="Type" placeholder="type...">
+  <br>
+
+  <input type="submit" value="Submit" class="button1">
+  <input type="reset" value="Reset" class="button1">
+
+</form>
+
+</body>
+</html>
+

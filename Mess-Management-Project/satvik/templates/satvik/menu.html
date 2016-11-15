@@ -1,0 +1,76 @@
+ {% load static %}
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'satvik/css/style.css' %}">
+<title>Project 1</title>
+</head>
+<body>
+
+<h1 color="blue"><u>Satvik Mess Menu</u></h1>
+
+<table style="width:100%">
+  <tr>
+    <th align="left">DAY</th>
+    <th align="left">BREAKFAST</th>
+    <th align="left">LUNCH</th>
+    <th align="left">DINNER</th>
+  </tr>
+
+   <tr>
+    <td>Monday</td>
+    <td>Paratha Sabji,Corn Flakes,Milk</td>
+    <td>Urad Dal,Rajma,Bittergourd,Raita</td>
+    <td>Arhar Dal,Aloo Tamatar, Parval,Custurd</td>
+  </tr>
+
+  <tr>
+    <td>Tuesday</td>
+    <td>Chola Bhatura,Corn Flakes,Milk,Chana Halwa</td>
+    <td>Arhar Dal,Mix Veg,Bhindi,Friut</td>
+    <td>Moong Dal,Gourd,idli Sambhar,Beans,Sweet</td>
+  </tr>
+
+  <tr>
+    <td>Wednesday</td>
+    <td>Dosa Sambhar,Corn Flakes,Milk</td>
+    <td>Chana Dal,Taroi Aloo,Curry,Curd</td>
+    <td>Makhani,Pakorii,Chola,Kheer</td>
+  </tr>
+
+  <tr>
+    <td>Thursday</td>
+    <td>Puri Sabji,Corn Flakes,Milk</td>
+    <td>Moong Dal,Bangan Bharta,Kala Chana,fruit Raita</td>
+    <td>Kali Urad,Paneer,Beans,Gulab Jamun</td>
+  </tr>
+
+  <tr>
+    <td>Friday</td>
+    <td>Chola Samosa,Corn Flakes,Milk</td>
+    <td>Urad Dal,Bhindi,Lassi,Gatta</td>
+    <td>Chowmeen,Arhar Dal,Loki Kophta,Sawii</td>
+  </tr>
+
+  <tr>
+    <td>Saturday</td>
+    <td>Paratha,Corn Flakes,Milk</td>
+    <td>Arhar Dal,Mix Veg,Panner,Rasmalai,Papad</td>
+    <td>DINNER CLOSED</td>
+  </tr>
+
+  <tr>
+    <td>Sunday</td>
+    <td>Kachori Daliya,Corn Flakes,Milk</td>
+    <td>Kadi Moong Dal,Tarooi,Fruit Raita</td>
+    <td>Moong Dal,Pav Bhaji,Chola,Sweet</td>
+  </tr>
+</table> 
+<br>
+<img src="/static/satvik/image/image3.jpeg"  height="250" width="400"/>
+<img src="/static/satvik/image/image2.jpeg" height="250" width="400"/>
+<img src="/static/satvik/image/image1.jpeg" height="250" width="400" />
+<br>
+<a href="{% url 'index' %}"><button class="button1">Back</button></a><br />
+</body>
+</html> 

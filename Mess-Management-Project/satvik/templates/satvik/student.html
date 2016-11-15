@@ -1,0 +1,29 @@
+ {% load static %}
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'satvik/css/style.css' %}">
+</head>
+<body>
+<h1><u>Details of the Students: </u></h1>
+
+<table style="width:100%">
+  <tr>
+    <th align="left">ROLLNO</th>
+    <th align="left">NAME</th>
+    <th align="left">SEMESTER</th>
+    <th align="left">HOSTEL</th>
+  </tr>
+  {% for i in stud %}
+  <tr>
+  {% for j in i%}
+    <td>{{j}}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+  
+</table> 
+<br>
+
+</body>
+</html> 

@@ -1,0 +1,42 @@
+ {% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'satvik/css/style.css' %}">
+</head>
+<body>
+<h1> <u>Enter the details new expenditure:</u></h1>
+<form action="{% url 'ainventory' %}" method="post">
+{% csrf_token %}
+{% if error %}
+  {{ error }}<br><br>
+{% endif %}
+
+  ITEM_NO:<br>
+  <input type="number" name="item" placeholder="item...">
+  <br>
+
+  MESS_NO:<br>
+  <input type="number" name="mess" placeholder="mess...">
+  <br>
+
+  PURCHASE_DATE:<br>
+  <input type="date" name="date" placeholder="date...">
+  <br>
+ 
+  QUANTITY:<br>
+  <input type="number" name="quan" placeholder="quantity...">
+  <br>
+
+  EXPENDITURE(Rs):<br>
+  <input type="number" name="expen" placeholder="expenditure...">
+  <br>
+
+  <input type="submit" value="Submit" class="button1">
+  <input type="reset" value="Reset" class="button1">
+
+</form>
+
+</body>
+</html>

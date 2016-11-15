@@ -1,0 +1,48 @@
+ {% load static %}
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'satvik/css/style.css' %}">
+<title>Project 1</title>
+</head>
+<body>
+<div id="example1">
+<h1><u>WELCOME TO SATVIK MESS IIT-BHU VARANASI</u></h1>
+<br><br>
+<p>
+Sattvic diet is a diet based on foods in Ayurveda and Yoga literature that contain sattva quality (guna).Sattvic diet is meant to include food and eating habit that is "pure, essential, natural, vital, energy-containing, clean, conscious, true, honest, wise".Sattvic diet is a regimen that places emphasis on seasonal foods, fruits, dairy products, nuts, seeds, oils, ripe vegetables, legumes, whole grains, and non-meat based proteins.
+</p>
+<p>
+Sattvic Mess here provides you with pure vegitarian food without anion and garlic.Here at IIT -BHU Sattvic mess is run at SN Bose Hostel and Vishweshwariya Hostel.One can check the menu available and 
+if intrested can register for Sattvik.
+</p>
+</div>
+
+<a href="{% url 'menu' %}"><button class="button1">Menu</button></a>
+<br>
+
+<a href="{% url 'login' %}"><button class="button1">Login</button></a>
+<br>
+
+<a href="{% url 'enroll' %}"><button class="button1">Enrollment</button></a>
+<br>
+
+<a href="{% url 'admin' %}"><button class="button1">Admin Login</button></a>
+
+<h2><u> Notification </u></h2>
+ {% for i in notice %}
+  {% for j in i%}
+    {{j}}
+  {% endfor %}
+  <br>
+  {% endfor %}
+<hr>
+ <footer>
+  <p>This site is run and managed by satvik team IIT-BHU.</p>
+  <p> <u>Contact information:</u></p>
+  <p> <u>Email: swapnil.agarwal14@gmail.com</u></p>
+  <p> <u>Phone :8350608673,9350706086</u></p>
+</footer> 
+<hr>
+</body>
+</html> 

@@ -1,0 +1,77 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: grey;
+    color: white;
+}
+.button1 {
+    background-color: #4CAF50; /* Green */
+    border: groove;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button2 {
+    background-color: #008CBA; /* Green */
+    border: groove;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button3 {
+    background-color: #e7e7e7; /* Green */
+    border: groove;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+p{
+	color: gray;
+	text-align: justify;
+}
+#example1 {
+    background: url("/static/satvik/image/logo.jpeg") left top no-repeat;
+    background-size: 100px 100px;
+}
+h1{
+	text-align: center;
+	color : lightblue;
+}
+h2{
+    text-align: left;;
+    color: lightblue;
+}

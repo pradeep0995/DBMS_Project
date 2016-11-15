@@ -1,0 +1,33 @@
+ {% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'satvik/css/style.css' %}">
+</head>
+<body>
+<p>Sign Up for Satvik</p>
+<form action="{% url 'signup' %}" method='POST'>
+{% csrf_token %}
+{% if error %}
+  {{ error }}<br><br>
+{% endif %}
+
+
+  Username:<br>
+  <input type="text" name="userid" placeholder="userid...">
+  <br>
+
+  Password:<br>
+  <input type="text" name="password" placeholder="password...">
+  <br>
+
+  <input type="submit" value="Submit">
+
+  <input type="reset" value="Reset">
+
+</form>
+
+</body>
+</html>
+

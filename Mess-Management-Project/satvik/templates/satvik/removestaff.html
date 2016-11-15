@@ -1,0 +1,48 @@
+ {% load static %}
+ <!DOCTYPE html>
+<!-- This file contains the basic outlook of the project  edit it further-->
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="{% static 'satvik/css/style.css' %}">
+</head>
+<body>
+<h1>CHOOSE THE MEMBER TO DELETE</h1>
+<p > You can view the details of the staff member. Choose the member id for which 
+you want the delete operation:</p>
+
+{% if error %}
+	{{ error }}<br>
+{% endif %}
+
+<table style="width:100%">
+  <tr>
+    <th align="left">Memberid</th>
+    <th align="left">Name</th>
+  </tr>
+  {% for i in staff %}
+  <tr>
+  {% for j in i%}
+    <td>{{j}}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %} 
+</table> 
+
+<br>
+<form action="{% url 'rstaff' %}" method="post">
+  {% csrf_token %}
+  Memberid:<br>
+  <input type="number" name="memberid" placeholder="id...">
+  <br>
+  <input type="submit" value="Submit" class="button1">
+  <input type="reset" value="Reset" class="button1">
+
+</form>
+
+</body>
+</html> 

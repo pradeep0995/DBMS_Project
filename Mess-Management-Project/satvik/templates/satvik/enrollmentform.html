@@ -1,0 +1,62 @@
+ {% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'satvik/css/style.css' %}">
+</head>
+<body>
+<h1><u>Registration for Satvik Mess</u></h1>
+<form action="{% url 'enroll' %}" method="post">
+{% csrf_token %}
+{% if error %}
+  {{ error }}<br><br>
+{% endif %}
+
+  Rollno:<br>
+  <input type="number" name="rollno" placeholder="rollno...">
+  <br>
+
+  Name:<br>
+  <input type="text" name="name" placeholder="name...">
+  <br>
+
+  Semester:<br>
+  <input type="text" name="semester" placeholder="semester...">
+  <br>
+ 
+  Year:<br>
+  <input type="number" name="year" placeholder="year...">
+  <br>
+
+  Phone:<br>
+  <input type="text" name="phone" placeholder="phone...">
+  <br>
+
+  Hostel:<br>
+  <input type="text" name="hostel" placeholder="hostel...">
+  <br>
+  
+  Receipt_no:<br>
+  <input type="text" name="receipt" placeholder="receipt...">
+  <br>
+
+  account_no:<br>
+  <input type="text" name="account" placeholder="account...">
+  <br>
+
+  mess_no:<br>
+  <input type="number" name="mess" placeholder="mess...">
+  <br>
+  
+  <input type="submit" value="Submit" class="button1">
+
+  <input type="reset" value="Reset" class="button1">
+</form>
+
+<a href="{% url 'index' %}"><button class="button1">Go to Home</button>
+<br><br>
+
+</body>
+</html>
+

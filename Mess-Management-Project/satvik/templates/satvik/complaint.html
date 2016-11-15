@@ -1,0 +1,56 @@
+ {% load static %}
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'satvik/css/style.css' %}">
+</head>
+<body>
+<h1><u>REGISTER YOUR COMPLAINTS HERE</u></h1>
+<p > You can view the details of the staff member. Choose the member id for which 
+you want to register complaint about :</p>
+
+{% if error %}
+	{{ error }}<br>
+{% endif %}
+
+<table style="width:100%">
+  <tr>
+    <th align="left">Memberid</th>
+    <th align="left">Name</th>
+    <th align="left">Type</th>
+  </tr>
+  {% for i in staff %}
+  <tr>
+  {% for j in i%}
+    <td>{{j}}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %} 
+</table> 
+
+<br>
+<form action="{% url 'rcomplaint' %}" method="post">
+  {% csrf_token %}
+  EnrollmentNo:<br>
+  <input type="number" name="enrollmentno" placeholder="enroll...">
+  <br>
+
+  Memberid:<br>
+  <input type="number" name="memberid" placeholder="member...">
+  <br>
+
+  Date:<br>
+  <input type="date" name="date" placeholder="date...">
+  <br>
+
+  Description:<br>
+  <input type="text" name="description" placeholder="describe...">
+  <br>
+
+  <input type="submit" value="Submit" class="button2">
+  <input type="reset" value="Reset" class=button2>
+
+</form>
+
+</body>
+</html> 

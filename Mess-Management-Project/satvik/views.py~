@@ -1,0 +1,117 @@
+from django.shortcuts import render
+from django.db import connection
+from django.http import HttpResponse
+import datetime
+
+# Create your views here.
+
+def index(request):
+	'''
+	context = {}
+	context['row'] = []
+
+	with connection.cursor() as cursor:
+		cursor.execute("select * from COMPLAINT")
+		tb = cursor.fetchall()
+		for row in tb:
+			context['row'] += [str(row), ]
+			'''
+	return render(request, 'satvik/home.html')
+
+def menu(request):
+	return render(request, 'satvik/menu.html')
+
+def login(request):
+	if request.method == 'POST':
+		username = request.POST.get('username')
+		password = request.POST.get('password')
+
+		# check if correct
+
+		# if correct
+		# update values and do stuff
+
+		# return redirect (...)
+		
+		# else if incorrect
+		context = {
+			'error' : 'Login/Password was incorrect'
+		}
+
+		return render(request, 'satvik/loginform.html', context)
+
+	elif request.method == 'GET':
+		return render(request, 'satvik/loginform.html')
+
+def enroll(request):
+	if request.method == 'POST':
+
+		# get all the attributes from the form
+		rollno  =   int(request.POST.get())
+		name    =   request.POST.get('name')
+		sem     =   request.POST.get('semester')
+		year    =  int(request.POST.get('year'))
+		phone   =   request.POST.get('phone')
+		hostel  =   request.POST.get('hostel')
+		receipt =  request.POST.get('receipt')
+		account =  request.POST.get('account')
+		mess    =   int(request.POST.get('mess'))
+
+		alpha = map(chr,range(97,123)) + map(chr,range(65,90))
+		alphanum = map(chr, range(97, 123)) + map(chr, range(48, 58)) 
+		alphanum += map(chr,range(65,90))
+		semes = ['I','II','III','IV','V','VI','VII','VIII','IX','X']
+
+		invalid = False
+		# check for incorrect roll no
+		if rollno.isdigit() == False:
+			invalid = True
+		if invalid:
+			context = {
+			'error' : 'RollNo should  contain only numbers'}
+			return HttpResponse(render(request,'enrollmentform.html',context))
+
+		#-------------------------------------------------------------------------
+		# check for incorrect name
+		for c in name:
+			if c not in alpha:
+				invalid = true;
+		if invalid:
+			context = {
+			'error' : 'Name should contain only alphabets'}
+			return HttpResponse(render(request,'enrollmentform.html',context))
+
+		#-------------------------------------------------------------------------
+		# check for incorrect year
+		now = datetime.datetime.now()
+		if year != now.year:
+			invalid = True
+		if invalid:
+			context = {
+			'error' : 'Invalid Year'}
+			return HttpResponse(render(request,'enrollmentform.html',context))
+
+		#-------------------------------------------------------------------------
+		# check for incorrect mess
+		if mess !=1 or mess != 2:
+			invalid = True
+		if invalid:
+			context = {
+			'error' : 'Mess is either 1 or 2'}
+			return HttpResponse(render(request,'enrollmentform.html',context))
+
+		# check for incorrect SEMESTER
+		if sem not in semes:
+			invalid = True
+		if invalid:
+			context = {
+			'error' : 'Enter Semester in Roman Numerals in Upper Case'}
+			return HttpResponse(render(request,'enrollmentform.html',context))
+		
+		with connection.cursor() as cursor:
+			#print("Connection made")
+   			cursor.execute('insert into ENROLLMENT(roll_no,name,semester,year,phone_no,hostel,receipt_no,account_no,mess_no) values("%d","%s","%s","%d","%s","%s","%s","%s","%d")' %(rollno,name,sem,year,phone,hostel,receipt,account,mess))
+   			return HttpResponse("You have successfully registered for Satvik")
+
+   	elif request.method == 'GET':
+   		return HttpResponse(render(request,'enrollmentform.html'))

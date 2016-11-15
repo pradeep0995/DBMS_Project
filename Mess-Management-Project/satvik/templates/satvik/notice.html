@@ -1,0 +1,22 @@
+ {% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'satvik/css/style.css' %}">
+</head>
+<body>
+<h1> <u>Enter the New Notice :</u></h1>
+<form action="{% url 'notice' %}" method="post">
+
+  NOTICE:<br>
+  <input type="text" name="notice" placeholder="notice...">
+  <br>
+
+  <input type="submit" value="Submit" class="button1">
+  <input type="reset" value="Reset" class="button1">
+
+</form>
+
+</body>
+</html>
+

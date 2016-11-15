@@ -1,0 +1,28 @@
+ {% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'satvik/css/style.css' %}">
+</head>
+<body>
+
+<h1> <u> Welcome {{user}} </u> </h1>
+
+<a href="{% url 'rcomplaint' %}"><button class="button1">Register Complaint</button></a>
+<br>
+
+<a href="{% url 'pcomplaint' %}"><button class="button1">Previous Complaints</button></a>
+<br>
+
+<a href="{% url 'gfeed' %}"><button class="button1">Give Feedback</button></a>
+<br>
+
+<a href="{% url 'pfeed' %}"><button class="button1">Previous Feedback</button></a>
+<br>
+
+<a href="{% url 'logout' %}"><button class="button1">Logout</button></a>
+<br>
+
+</body>
+</html>
+
